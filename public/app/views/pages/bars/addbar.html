@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head valign="middle">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class = "page-header">
+    <h1>Enter the new bars details below</h1>
+    <p>{{message}}</p>
+</div>
+<div ng-controller="addbarController" >
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+
+
+            <form ng-submit="addBar(newBar)">
+
+                <div class="col-md-4" ><span style="height:55px; font-size:20px; margin-left:20px; margin-right:20px; valign="middle";>Bar Name</div>
+                <div class="col-md-8" ><input class="form-control" type="text" name="barName" placeholder="Enter the bar name" ng-model="newBar.barName" required = "true"></div>
+                <br><br><br>
+
+                <div class="col-md-4" ><span style="height:55px; font-size:20px; margin-left:20px; margin-right:20px; valign="middle";>Location</div>
+                <div class="col-md-8" ><input class="form-control"  type="text" name="location"  placeholder="Enter the bars location" ng-model="newBar.location"  required = "true"> </div>
+                <br><br><br>
+
+                <div class="col-md-4" ><span style="height:55px; font-size:20px; margin-left:20px; margin-right:20px; valign="middle";>Earnings</div>
+                <div class="col-md-8" ><input class="form-control"  type="number" name="earnings"  placeholder="Enter the bars earnings" ng-model="newBar.earnings"  required = "true"></input></div>
+                <br><br><br>
+                <br><br><br>
+
+                <br><br><br>
+                <div class="col-md-9" ></div><div class="col-md-3" ><button class ="btn btn-primary"  type = "submit">ENTER NEW BAR</button></div>
+            </form>
+            <br> <br>  <br>
+
+        </div>
+    </div>
+</div>
+</body>
+</html>
