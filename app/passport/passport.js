@@ -55,7 +55,7 @@ module.exports =function (passport,  FacebookStrategy, TwitterStrategy, GoogleSt
             })
         }
     ));
-//
+
     passport.use(new TwitterStrategy({
             consumerKey: 'VVRNZKbfrmHmlUjH48VojNPve',
             consumerSecret: 'FiJk28FcH9NgozJquUN6bMRktgJquZh2RyAxYzXNIqboZLKg2O',
@@ -63,10 +63,7 @@ module.exports =function (passport,  FacebookStrategy, TwitterStrategy, GoogleSt
             userProfileURL: "https://api.twitter.com/1.1/account/verify_credentials.json?include_email=true"
         },
         function (token, tokenSecret, profile, done) {
-            // User.findOrCreate(..., function(err, user) {
-            //     if (err) { return done(err); }
-            //     done(null, user);
-            // });
+
             console.log()
             User.findOne({
                 email: profile.emails[0].value
@@ -89,11 +86,9 @@ module.exports =function (passport,  FacebookStrategy, TwitterStrategy, GoogleSt
             clientID: '1013243174-hsh3ihmk2pffjuiv1srbasicmpr83pkp.apps.googleusercontent.com',
             clientSecret: 'AUrCY51OT4iQ27rTzsab1kA0',
             callbackURL: "http://localhost:3000/auth/google/callback"
-            // passReqToCallback   : true
-
         },
         function (request, accessToken, refreshToken, profile, done) {
-            //console.log(profile.emails[0].value)
+
 
             console.log()
             User.findOne({

@@ -8,22 +8,10 @@
     <h1>Hello {{main.username}} from about route</h1>
 </div>
 <div ng-controller="barlistController as list">
-
-        <div class ="panel panel-info">
-            <div class ="panel-heading" style="text-align: center;"><strong>Bar list</strong></div>
-            <!--<table align="center" valign="middle">-->
-        <div class="form-group search-bar">
-            <input class="form-control input-text" id="searchbar" ng-model="searchPosts" type="text" placeholder="Search">
-        </div>
-            <table class = 'table'>
-                <tr>
-                    <td><strong>Name</strong></td>
-                    <td><strong> Location </strong></td>
-                    <td><strong> Earnings </strong></td>
-
-                </tr>
-        <tbody ng-repeat="bar in bars | orderBy:'-barName'| filter: searchPosts">
-
+    <div class="form-group search-bar">
+        <input class="form-control input-text" id="searchbar" ng-model="searchPosts" type="text" placeholder="Search">
+    <table align="center" valign="middle">
+        <tbody ng-repeat="bar in bars | orderBy:'-role'| filter: searchPosts">
         <tr style="height:55px; font-size:20px; margin-left:20px; margin-right:20px; valign=" middle
         "; >
         <td>
