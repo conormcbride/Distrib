@@ -18,28 +18,28 @@ var app = angular.module('appRoutes',['ngRoute'])
          })
         .when('/addBar',{
 
-            templateUrl: 'app/views/pages/bars/addbar.html',
+            templateUrl: 'app/views/pages/bars/addreservationlist.html',
             controller:'addbarController',
             //controllerAs: 'patient', //nickname for controller
             authenticated: true
 
          }).when('/addStaff',{
 
-            templateUrl: 'app/views/pages/staff/addstaff.html',
+            templateUrl: 'app/views/pages/location.js/addstaff.html',
             controller:'addstaffcontroller',
             //controllerAs: 'patient', //nickname for controller
             authenticated: true
 
          }) .when('/allbarlist',{
 
-            templateUrl: 'app/views/pages/bars/allbarlist.html',
+            templateUrl: 'app/views/pages/bars/allreservationlist.html',
             controller:'barlistController',
             //controllerAs: 'barlist', //nickname for controller
             authenticated: true
 
          }).when('/allstafflist',{
 
-            templateUrl: 'app/views/pages/staff/allstafflist.html',
+            templateUrl: 'app/views/pages/location.js/allstafflist.html',
             controller:'stafflistController',
             //controllerAs: 'barlist', //nickname for controller
             authenticated: true

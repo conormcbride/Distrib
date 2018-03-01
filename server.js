@@ -15,8 +15,8 @@ require('./app/passport/passport.js')(passport, FacebookStrategy, TwitterStrateg
 
 // <!-- All Routes -->
 
-var staff = require('./app/routes/staffroutes')
-var bar = require('./app/routes/barroutes')
+var staff = require('./app/routes/locationroutes')
+var bar = require('./app/routes/reservationroutes')
 
 
 
@@ -29,13 +29,13 @@ app.use(express.static(__dirname+ '/public'))//give frontend access to the publi
 app.use('/api', appRoutes);// defining backend routes to differentiate from frontend routes to avoid nameing conflictions
 
 
-app.delete('/staff/:id', staff.deleteStaff);
-app.get('/staff/:id', staff.findOne);
+app.delete('/location.js/:id', staff.deleteStaff);
+app.get('/location.js/:id', staff.findOne);
 
-app.get('/staff', staff.findAll);
-app.post('/staff', staff.newStaff);
-app.put('/staff/:id/update', staff.updateRateOfPay);
-app.put('/staff/:id', staff.incrementDaysAbscent);
+app.get('/location.js', staff.findAll);
+app.post('/location.js', staff.newStaff);
+app.put('/location.js/:id/update', staff.updateRateOfPay);
+app.put('/location.js/:id', staff.incrementDaysAbscent);
 
 app.delete('/bar/:id', bar.deleteBar);
 app.get('/bar/:id', bar.findOne);
