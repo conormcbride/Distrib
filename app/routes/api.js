@@ -11,11 +11,22 @@ module.exports =  function(router){
 
     router.post('/users', function (req, res) {
     var user = new User();
-    user.username = req.body.username
-    user.password = req.body.password
-    user.email = req.body.email
+        user.fname = req.body.fname
+        user.password = req.body.password
+        user.email = req.body.email
+        user.lname = req.body.lname
+        user.mobileNo = req.body.mobileNo
+        user.role = req.body.role
+        user.userType = req.body.userType
 
-    if (req.body.username == null || req.body.username =='' || req.body.password == null || req.body.password =='' || req.body.email == null || req.body.email ==''){
+    if (req.body.username == null || req.body.username =='' ||
+        req.body.password == null || req.body.password =='' ||
+        req.body.email == null    || req.body.email =='' ||
+        req.body.lname == null    || req.body.lname =='' ||
+        req.body.mobileNo == null || req.body.mobileNo =='' ||
+        req.body.role == null     || req.body.role ==''||
+        req.body.userType == null || req.body.userType ==''
+        ){
         res.json({
             success:false,
             message:'Ensure nothing is left empty'
