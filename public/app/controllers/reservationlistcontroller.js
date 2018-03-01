@@ -1,14 +1,14 @@
-var app = angular.module('barlistcontroller', [])
-app.controller('barlistController', ['$scope', '$http', function($scope, $http) {
+var app = angular.module('reservationlistcontroller', [])
+app.controller('reservationlistcontroller', ['$scope', '$http', function($scope, $http) {
     // create a message to display in our view
-    $scope.message = 'Bar List!';
+    $scope.message = 'Reservation List!';
 
     findAll();
 
     function findAll() {
-        $http.get('/bar')
+        $http.get('/reservation')
             .success(function (data) {
-                $scope.bars = data;
+                $scope.reservations = data;
                 console.log(data);
             })
             .error(function (data) {
@@ -20,7 +20,7 @@ app.controller('barlistController', ['$scope', '$http', function($scope, $http) 
         if (confirm("are you sure you want to delete this ?")) {
             console.log('Deleting id :' + id);
 
-            $http.delete('/bar/' + id)
+            $http.delete('/reservation/' + id)
                 .success(function (data) {
                     console.log(data);
                     findAll();
@@ -32,14 +32,14 @@ app.controller('barlistController', ['$scope', '$http', function($scope, $http) 
     }
     $scope.current = {};
 
-    $scope.update = function (bar) {
-        console.log(bar._id);
-        $scope.current = bar;
+    $scope.update = function (reservation) {
+        console.log(reservation._id);
+        $scope.current = reservation;
     };
 
     $scope.save = function () {
         console.log($scope.current._id);
-        $http.put('bar/' + $scope.current._id + '/update', $scope.current).success(function (data) {
+        $http.put('reservation/' + $scope.current._id + '/update', $scope.current).success(function (data) {
 
             console.log(data);
             findAll()

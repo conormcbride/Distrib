@@ -29,35 +29,3 @@ angular.module('userControllers', ['userServices'])
 })
 
 
-.controller('facebookCtrl', function ($routeParams, Auth, $location, $window) {
-    var app = this;
-
-    if($window.location.pathname == '/facebookerror'){
-        app.errorMsg = 'Email address of Facebook account used is not registered'
-
-    }else {
-    Auth.facebook($routeParams.token)
-    $location.path('/')}
-})
-
-.controller('twitterCtrl', function ($routeParams, Auth, $location, $window) {
-    var app = this;
-
-    if($window.location.pathname == '/twittererror'){
-        app.errorMsg = 'Email address of Twitter account used is not registered'
-
-    }else {
-    Auth.facebook($routeParams.token)
-    $location.path('/')}
-})
-
-    .controller('googleCtrl', function ($routeParams, Auth, $location, $window) {
-        var app = this;
-
-        if($window.location.pathname == '/googleerror'){
-            app.errorMsg = 'Email address of Google+ account used is not registered'
-
-        }else {
-            Auth.facebook($routeParams.token)
-            $location.path('/')}
-    })

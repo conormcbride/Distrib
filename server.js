@@ -7,16 +7,12 @@ var bodyParser = require('body-parser')
 var router = express.Router()
 var appRoutes = require('./app/routes/api')(router)  //user router object with this route file
 var path = require('path')
-var passport = require('passport');
-var FacebookStrategy = require('passport-facebook').Strategy;
-var TwitterStrategy = require('passport-twitter').Strategy;
-var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
-require('./app/passport/passport.js')(passport, FacebookStrategy, TwitterStrategy, GoogleStrategy, app)
+
 
 // <!-- All Routes -->
 
-var staff = require('./app/routes/locationroutes')
-var bar = require('./app/routes/reservationroutes')
+var location = require('./app/routes/locationroutes')
+var reservation = require('./app/routes/reservationroutes')
 
 
 
@@ -29,19 +25,15 @@ app.use(express.static(__dirname+ '/public'))//give frontend access to the publi
 app.use('/api', appRoutes);// defining backend routes to differentiate from frontend routes to avoid nameing conflictions
 
 
-app.delete('/location.js/:id', staff.deleteStaff);
-app.get('/location.js/:id', staff.findOne);
 
-app.get('/location.js', staff.findAll);
-app.post('/location.js', staff.newStaff);
-app.put('/location.js/:id/update', staff.updateRateOfPay);
-app.put('/location.js/:id', staff.incrementDaysAbscent);
+app.get('/location/:id', location.findOne);
 
-app.delete('/bar/:id', bar.deleteBar);
-app.get('/bar/:id', bar.findOne);
-app.get('/bar', bar.findAll);
-app.post('/bar', bar.addBar);
-app.put('/bar/:id/update', bar.updateBarEarnings);
+
+
+app.delete('/reservation/:id', reservation.deleteReservation);
+app.get('/reservation/:id', reservation.findOne);
+app.get('/reservation', reservation.findAll);
+app.post('/reservation', reservation.addReservation);
 
 
 

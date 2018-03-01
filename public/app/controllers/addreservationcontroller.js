@@ -1,23 +1,19 @@
-var app = angular.module('addbarController', [])
+var app = angular.module('addreservationController', [])
 
-app.controller('addbarController', ['$scope', '$location', '$http', function($scope, $location, $http) {
+app.controller('addreservationController', ['$scope', '$location', '$http', function($scope, $location, $http) {
 
 
 
-    $scope.addBar = function(newBar){
-        $http.post('/bar', newBar).success(function(data) {
-            $scope.bars = data;
-            $location.path('/allbarlist');
+    $scope.addReservation = function(newReservation){
+        $http.post('/reservation', newReservation).success(function(data) {
+            $scope.reservations = data;
+            $location.path('/allreservationlist');
             console.log(data);
         })
             .error(function(data) {
                 console.log('Error: ' + data);
             });
     };
-    // $scope.addBar =  function hello() {
-    //
-    //     console.log("Hello WOrld");
-    //
-    // }
+
 
 }]);

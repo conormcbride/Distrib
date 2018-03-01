@@ -3,6 +3,11 @@
 <head valign="middle">
     <meta charset="UTF-8">
     <title>Title</title>
+    <script>
+        $( function() {
+            $( "#datepicker" ).datepicker();
+        } );
+    </script>
 </head>
 <body>
 <div class = "page-header">
@@ -16,21 +21,22 @@
 
             <form ng-submit="addBar(newBar)">
 
-                <div class="col-md-4" ><span style="height:55px; font-size:20px; margin-left:20px; margin-right:20px; valign="middle";>Bar Name</div>
-                <div class="col-md-8" ><input class="form-control" type="text" name="barName" placeholder="Enter the bar name" ng-model="newBar.barName" required = "true"></div>
+                <div class="col-md-4" ><span style="height:55px; font-size:20px; margin-left:20px; margin-right:20px; valign="middle";>User</div>
+                <div class="col-md-8" ><input class="form-control" type="text" name="barName" placeholder="Enter the your name" ng-model="newReservation.user" required = "true"></div>
                 <br><br><br>
 
-                <div class="col-md-4" ><span style="height:55px; font-size:20px; margin-left:20px; margin-right:20px; valign="middle";>Location</div>
-                <div class="col-md-8" ><input class="form-control"  type="text" name="location"  placeholder="Enter the bars location" ng-model="newBar.location"  required = "true"> </div>
+                <div class="col-md-4" ><span style="height:55px; font-size:20px; margin-left:20px; margin-right:20px; valign="middle";>Date</div>
+                <div class="col-md-8" ><input class="form-control"  type="text" name="location"  placeholder="Enter the you want to reserve" ng-model="newReservation.location"  required = "true"> </div>
                 <br><br><br>
 
-                <div class="col-md-4" ><span style="height:55px; font-size:20px; margin-left:20px; margin-right:20px; valign="middle";>Earnings</div>
-                <div class="col-md-8" ><input class="form-control"  type="number" name="earnings"  placeholder="Enter the bars earnings" ng-model="newBar.earnings"  required = "true"></input></div>
+                <div class="col-md-4" ><span style="height:55px; font-size:20px; margin-left:20px; margin-right:20px; valign="middle";>Length</div>
+                <div class="col-md-8" ><input class="form-control"  type="number" name="earnings"  placeholder="Enter the bars earnings" ng-model="newReservation.earnings"  required = "true"></input></div>
                 <br><br><br>
                 <br><br><br>
+                er
 
                 <br><br><br>
-                <div class="col-md-9" ></div><div class="col-md-3" ><button class ="btn btn-primary"  type = "submit">ENTER NEW BAR</button></div>
+                <div class="col-md-9" ></div><div class="col-md-3" ><button class ="btn btn-primary"  type = "submit">ENTER NEW RESERVATION</button></div>
             </form>
             <br> <br>  <br>
 

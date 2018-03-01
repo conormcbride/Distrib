@@ -4,7 +4,7 @@ app.controller('addstaffcontroller', ['$scope', '$location', '$http', function($
 
 
 
-    $scope.addStaff = function(newStaff){
+    $scope.addStaff = function(newUser){
         $http.post('/location.js', newStaff).success(function(data) {
             $scope.bars = data;
             $location.path('/allstafflist');

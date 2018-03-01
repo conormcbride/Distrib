@@ -21,13 +21,9 @@
     <!--&lt;!&ndash; Angular Controllers &ndash;&gt;-->
     <script src="app/controllers/userCtrl.js"></script>
     <script src="app/controllers/mainCtrl.js"></script>
-    <script src="app/controllers/barlistcontroller.js"></script>
-    <script src="app/controllers/addstaffcontroller.js"></script>
-    <script src="app/controllers/stafflistcontroller.js"></script>
-    <script src="app/controllers/addbarController.js"></script>
-    <!--<script src="app/controllers/emailCtrl.js"></script>-->
-    <!--<script src="app/controllers/managementCtrl.js"></script>-->
-
+    <script src="app/controllers/reservationlistcontroller.js"></script>
+    <script src="app/controllers/addreservationcontroller.js"></script>
+    <script src="app/controllers/adduserController.js"></script>
     <!--&lt;!&ndash; Angular Services &ndash;&gt;-->
     <script src="app/services/userServices.js"></script>
     <script src="app/services/authServices.js"></script>
@@ -63,14 +59,10 @@
                 <li class="dropdown">
                     <a ng-show ="main.isLoggedIn" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Bar<span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="/addBar">Add a Bar</a></li>
-                        <li><a href="/allbarlist">List of Bars</a></li>
+                        <li><a href="/addBar">Add a Reservation</a></li>
+                        <li><a href="/allbarlist">List of Reservations</a></li>
                     </ul> <li class="dropdown">
-                    <a ng-show ="main.isLoggedIn" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Staff<span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="/addStaff">Add a location.js member</a></li>
-                        <li><a href="/allstafflist">List of location.js members</a></li>
-                    </ul>
+
                 <li><a ng-show ="main.isLoggedIn" href="#" ng-click="main.logout()">Log Out</a></li>
                 <li><a ng-show ="!main.isLoggedIn" href="/login">Login</a></li>
                 <li><a ng-show ="!main.isLoggedIn" href="/register">Register</a></li>
