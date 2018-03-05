@@ -1,7 +1,8 @@
 var User = require('../models/user')
 var jwt = require('jsonwebtoken')
 var secret = 'password';
-
+var express = require('express');
+var router = express.Router();
 
 
 
@@ -16,17 +17,16 @@ module.exports =  function(router){
         user.email = req.body.email
         user.lname = req.body.lname
         user.mobileNo = req.body.mobileNo
-        user.role = req.body.role
         user.userType = req.body.userType
 
-    if (req.body.username == null || req.body.username =='' ||
+    if (req.body.fname == null || req.body.fname =='' ||
         req.body.password == null || req.body.password =='' ||
         req.body.email == null    || req.body.email =='' ||
         req.body.lname == null    || req.body.lname =='' ||
         req.body.mobileNo == null || req.body.mobileNo =='' ||
-        req.body.role == null     || req.body.role ==''||
-        req.body.userType == null || req.body.userType ==''
+        req.body.userType == null     || req.body.userType ==''
         ){
+
         res.json({
             success:false,
             message:'Ensure nothing is left empty'

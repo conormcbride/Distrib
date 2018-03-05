@@ -16,40 +16,26 @@ var app = angular.module('appRoutes',['ngRoute'])
             templateUrl: 'app/views/pages/about.html'
 
          })
-        .when('/addBar',{
+        .when('/addReservation',{
 
-            templateUrl: 'app/views/pages/bars/addreservationlist.html',
-            controller:'addbarController',
-            //controllerAs: 'patient', //nickname for controller
-            authenticated: true
+            templateUrl: 'app/views/pages/reservation/addreservationlist.html',
+            controller:'addReservationController',
 
-         }).when('/addStaff',{
+            // authenticated: true
 
-            templateUrl: 'app/views/pages/location.js/addstaff.html',
-            controller:'addstaffcontroller',
-            //controllerAs: 'patient', //nickname for controller
-            authenticated: true
+        }).when('/allreservationlist',{
 
-         }) .when('/allbarlist',{
-
-            templateUrl: 'app/views/pages/bars/allreservationlist.html',
-            controller:'barlistController',
+            templateUrl: 'app/views/pages/reservation/allreservationlist.html',
+            controller:'reservationListController',
             //controllerAs: 'barlist', //nickname for controller
-            authenticated: true
-
-         }).when('/allstafflist',{
-
-            templateUrl: 'app/views/pages/location.js/allstafflist.html',
-            controller:'stafflistController',
-            //controllerAs: 'barlist', //nickname for controller
-            authenticated: true
+            // authenticated: true
 
          })
 
             .when('/login',{
 
                 templateUrl: 'app/views/pages/users/login.html',
-                authenticated: false
+                // authenticated: false
 
             })
             .when('/register',{
@@ -57,7 +43,7 @@ var app = angular.module('appRoutes',['ngRoute'])
                 templateUrl: 'app/views/pages/users/register.html',
                 controller: 'regCtrl',
                 controllerAs: 'register', //nickname for controller
-                authenticated: false
+                // authenticated: false
             })
 
             .when('/logout',{
@@ -65,7 +51,7 @@ var app = angular.module('appRoutes',['ngRoute'])
                 templateUrl: 'app/views/pages/users/logout.html',
                 // controller: 'regCtrl',
                 // controllerAs: 'register' //nickname for controller
-                authenticated: true
+                // authenticated: true
 
 
             })
@@ -74,7 +60,7 @@ var app = angular.module('appRoutes',['ngRoute'])
                 templateUrl: 'app/views/pages/users/profile.html',
                 // controller: 'regCtrl',
                 // controllerAs: 'register' //nickname for controller
-                authenticated: true
+                // authenticated: true
 
             })
 
@@ -86,63 +72,6 @@ var app = angular.module('appRoutes',['ngRoute'])
 
             })
 
-
-            .when('/facebook/:token',{
-
-                templateUrl: 'app/views/pages/users/social/social.html',
-                controller: 'facebookCtrl',
-                controllerAs: 'facebook', //nickname for controller,
-                authenticated: false
-
-
-
-            })
-
-            .when('/twitter/:token',{
-
-                templateUrl: 'app/views/pages/users/social/social.html',
-                controller: 'twitterCtrl',
-                controllerAs: 'twitter', //nickname for controller
-                authenticated: false
-
-
-            })
-
-            .when('/facebookerror',{
-
-                templateUrl: 'app/views/pages/users/login.html',
-                controller: 'facebookCtrl',
-                controllerAs: 'facebook', //nickname for controller
-                authenticated: false
-
-            })
-
-            .when('/twittererror',{
-
-                templateUrl: 'app/views/pages/users/login.html',
-                controller: 'twitterCtrl',
-                controllerAs: 'twitter', //nickname for controller
-                authenticated: false
-
-            })
-
-            .when('/googleerror',{
-
-                templateUrl: 'app/views/pages/users/login.html',
-                controller: 'googleCtrl',
-                controllerAs: 'google', //nickname for controller
-                authenticated: false
-
-            })
-
-            .when('/google/:token',{
-
-                templateUrl: 'app/views/pages/users/social/social.html',
-                controller: 'googleCtrl',
-                controllerAs: 'google', //nickname for controller
-                authenticated: false
-
-            })
             .otherwise({
                 redirectTo: '/'
             })   // redirects users to the home page if the url is incorrect or does not exist

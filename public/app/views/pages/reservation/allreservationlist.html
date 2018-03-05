@@ -7,28 +7,28 @@
 <div class="page-header">
     <h1>Hello {{main.username}} from about route</h1>
 </div>
-<div ng-controller="barlistController as list">
+<div ng-controller="reservationListController as list">
     <div class="form-group search-bar">
         <input class="form-control input-text" id="searchbar" ng-model="searchPosts" type="text" placeholder="Search">
     <table align="center" valign="middle">
-        <tbody ng-repeat="bar in bars | orderBy:'-role'| filter: searchPosts">
+        <tbody ng-repeat="reservation in reservations | orderBy:'-role'| filter: searchPosts">
         <tr style="height:55px; font-size:20px; margin-left:20px; margin-right:20px; valign=" middle
         "; >
         <td>
             <span class="glyphicon glyphicon-user"></span>
             <!--<span  style="height:55px; font-size:20px; margin-left:20px; margin-right:20px; valign=" middle";>-->
-            {{bar.barName}}
+            {{reservation.barName}}
             <!--</span>-->
         </td>
         <td>
             <span class="glyphicon glyphicon-home"></span>
             <!--<span style="height:55px; font-size:20px; margin-left:20px; margin-right:20px; valign=" middle";>-->
-            {{bar.location}}
+            {{reservation.location}}
             <!--</span>-->
         </td>
         <td>
             <span class="glyphicon glyphicon-euro"></span>
-            {{bar.earnings}}                &nbsp
+            {{reservation.earnings}}                &nbsp
 
         </td>
         <td>
@@ -36,10 +36,10 @@
             <!--<span style="height:55px; font-size:20px; margin-left:20px; margin-right:20px; valign=" middle";>-->
 
 
-            <button type="button" class="btn btn-default" ng-click="delete(bar._id)">
+            <button type="button" class="btn btn-default" ng-click="delete(reservation._id)">
                 <span class="glyphicon glyphicon-remove"></span> Remove
             </button>
-            <button type="button" class="btn btn-default" ng-click="update(bar.earnings)">
+            <button type="button" class="btn btn-default" ng-click="update(reservation.earnings)">
                 <span class="glyphicon glyphicon-edit"></span> Edit
             </button>
             <!--</span>-->

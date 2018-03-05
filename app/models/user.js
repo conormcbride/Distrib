@@ -7,7 +7,6 @@ var UserSchema = new Schema({
 
     fname: { type: String, lowercase: true, required: true },
     lname: { type: String, lowercase: true, required: true},
-    role:{ type: String, lowercase: true, required: true},
     mobileNo:{ type: Number, lowercase: true, required: true},
     userType:{ type: String, lowercase: true, required: true},
     password: { type: String, required: true},

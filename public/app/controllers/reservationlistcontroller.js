@@ -1,5 +1,5 @@
-var app = angular.module('reservationlistcontroller', [])
-app.controller('reservationlistcontroller', ['$scope', '$http', function($scope, $http) {
+var app = angular.module('reservationListController', [])
+app.controller('reservationListController', ['$scope', '$http', function($scope, $http) {
     // create a message to display in our view
     $scope.message = 'Reservation List!';
 

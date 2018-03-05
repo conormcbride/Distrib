@@ -14,12 +14,12 @@
     <h1>Enter the new bars details below</h1>
     <p>{{message}}</p>
 </div>
-<div ng-controller="addbarController" >
+<div ng-controller="addReservationController" >
     <div class="row">
         <div class="col-md-6 col-md-offset-3">
 
 
-            <form ng-submit="addBar(newBar)">
+            <form ng-submit="addReservation(newBar)">
 
                 <div class="col-md-4" ><span style="height:55px; font-size:20px; margin-left:20px; margin-right:20px; valign="middle";>User</div>
                 <div class="col-md-8" ><input class="form-control" type="text" name="barName" placeholder="Enter the your name" ng-model="newReservation.user" required = "true"></div>

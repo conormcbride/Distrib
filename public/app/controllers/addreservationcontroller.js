@@ -1,6 +1,6 @@
-var app = angular.module('addreservationController', [])
+var app = angular.module('addReservationController', [])
 
-app.controller('addreservationController', ['$scope', '$location', '$http', function($scope, $location, $http) {
+app.controller('addReservationController', ['$scope', '$location', '$http', function($scope, $location, $http) {
 
 
 
