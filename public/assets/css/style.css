@@ -61,3 +61,18 @@ body{
 #welcome{
     background-color: white;
 }
+
+td{
+    padding-left:30px;
+    padding-right:30px;
+    alignment: center;
+}
+th{
+    alignment: center;
+    padding-left:30px;
+    padding-right:30px;
+}
+
+table, th, td {
+    border: 1px solid black;
+}

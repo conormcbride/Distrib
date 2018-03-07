@@ -10,8 +10,10 @@
 <div ng-controller="reservationListController as list">
     <div class="form-group search-reservation">
         <input class="form-control input-text" id="searchreservation" ng-model="searchPosts" type="text" placeholder="Search">
-    <table align="center" valign="middle">
+    <table align="center" valign="middle" cellspacing="100">
+        <tr><th>Capacity</th><th>Room Type</th><th>Event Type</th><th>Date</th><th>Time in hours</th></tr>
         <tbody ng-repeat="reservation in reservations | orderBy:'-role'| filter: searchPosts">
+
         <tr style="height:55px; font-size:20px; margin-left:20px; margin-right:20px; valign=" middle
         "; >
         <td>
@@ -24,7 +26,7 @@
             <!--<span  style="height:55px; font-size:20px; margin-left:20px; margin-right:20px; valign=" middle";>-->
             {{reservation.roomType}}
             <!--</span>-->
-        </td></td><td>
+        </td><td>
             <!--<span class="glyphicon glyphicon-user"></span>-->
             <!--<span  style="height:55px; font-size:20px; margin-left:20px; margin-right:20px; valign=" middle";>-->
             {{reservation.eventType}}
@@ -71,7 +73,7 @@
         </tr>
     </div>
 </div>
-
+</div>
 </body>
 </html>
 

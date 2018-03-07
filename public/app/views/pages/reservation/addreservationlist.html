@@ -26,7 +26,11 @@
                 <br><br><br>
 
                 <div class="col-md-4" ><span style="height:55px; font-size:20px; margin-left:20px; margin-right:20px; valign="middle";>Room Type</div>
-                <div class="col-md-8" ><input class="form-control" type="text" name="roomType" placeholder="Enter the how many people will be attending" ng-model="newReservation.roomType" required = "true"></div>
+                <div class="col-md-8" ><select input class="form-control"  name="roomType" placeholder="Enter the how many people will be attending" ng-model="newReservation.roomType" required = "true">
+
+                <option value="Conference Room">Conference</option>
+                    <option value="Small Room">Small room</option>
+                </select></div>
                 <br><br><br>
 
                 <div class="col-md-4" ><span style="height:55px; font-size:20px; margin-left:20px; margin-right:20px; valign="middle";>Event Type</div>
