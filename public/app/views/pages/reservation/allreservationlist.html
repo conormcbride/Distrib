@@ -8,27 +8,37 @@
     <h1>Hello {{main.username}} from about route</h1>
 </div>
 <div ng-controller="reservationListController as list">
-    <div class="form-group search-bar">
-        <input class="form-control input-text" id="searchbar" ng-model="searchPosts" type="text" placeholder="Search">
+    <div class="form-group search-reservation">
+        <input class="form-control input-text" id="searchreservation" ng-model="searchPosts" type="text" placeholder="Search">
     <table align="center" valign="middle">
         <tbody ng-repeat="reservation in reservations | orderBy:'-role'| filter: searchPosts">
         <tr style="height:55px; font-size:20px; margin-left:20px; margin-right:20px; valign=" middle
         "; >
         <td>
-            <span class="glyphicon glyphicon-user"></span>
+            <!--<span class="glyphicon glyphicon-user"></span>-->
             <!--<span  style="height:55px; font-size:20px; margin-left:20px; margin-right:20px; valign=" middle";>-->
-            {{reservation.barName}}
+            {{reservation.capacity}}
+            <!--</span>-->
+        </td><td>
+            <!--<span class="glyphicon glyphicon-user"></span>-->
+            <!--<span  style="height:55px; font-size:20px; margin-left:20px; margin-right:20px; valign=" middle";>-->
+            {{reservation.roomType}}
+            <!--</span>-->
+        </td></td><td>
+            <!--<span class="glyphicon glyphicon-user"></span>-->
+            <!--<span  style="height:55px; font-size:20px; margin-left:20px; margin-right:20px; valign=" middle";>-->
+            {{reservation.eventType}}
             <!--</span>-->
         </td>
         <td>
-            <span class="glyphicon glyphicon-home"></span>
+            <!--<span class="glyphicon glyphicon-home"></span>-->
             <!--<span style="height:55px; font-size:20px; margin-left:20px; margin-right:20px; valign=" middle";>-->
-            {{reservation.location}}
+            {{reservation.date}}
             <!--</span>-->
         </td>
         <td>
-            <span class="glyphicon glyphicon-euro"></span>
-            {{reservation.earnings}}                &nbsp
+            <!--<span class="glyphicon glyphicon-euro"></span>-->
+            {{reservation.length}}                &nbsp
 
         </td>
         <td>
@@ -39,7 +49,7 @@
             <button type="button" class="btn btn-default" ng-click="delete(reservation._id)">
                 <span class="glyphicon glyphicon-remove"></span> Remove
             </button>
-            <button type="button" class="btn btn-default" ng-click="update(reservation.earnings)">
+            <button type="button" class="btn btn-default" ng-click="update(reservation)">
                 <span class="glyphicon glyphicon-edit"></span> Edit
             </button>
             <!--</span>-->
@@ -51,7 +61,7 @@
     <div>
         <tr>
             <td>
-                <input type="number" id="earnings" valign="middle" ng-model="current.earnings" value="{{current.earnings}}"/>
+                <input type="number" id="capacity" valign="middle" ng-model="current.capacity" value="{{current.capacity}}"/>
             </td>
         </tr>
         <tr>

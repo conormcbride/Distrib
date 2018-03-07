@@ -6,26 +6,29 @@ var router = express.Router();
 
 
 
+
 module.exports =  function(router){
     var app = this;
     app.token = jwt;
 
     router.post('/users', function (req, res) {
     var user = new User();
-        user.fname = req.body.fname
-        user.password = req.body.password
-        user.email = req.body.email
-        user.lname = req.body.lname
-        user.mobileNo = req.body.mobileNo
-        user.userType = req.body.userType
+    user.uname = req.body.uname
+    user.fname = req.body.fname
+    user.password = req.body.password
+    user.email = req.body.email
+    user.lname = req.body.lname
+    user.mobileNo = req.body.mobileNo
+    user.userType = req.body.userType
 
-    if (req.body.fname == null || req.body.fname =='' ||
+    if (req.body.fname == null || req.body.fname ==''
+        ||req.body.uname == null || req.body.uname =='' ||
         req.body.password == null || req.body.password =='' ||
         req.body.email == null    || req.body.email =='' ||
         req.body.lname == null    || req.body.lname =='' ||
         req.body.mobileNo == null || req.body.mobileNo =='' ||
         req.body.userType == null     || req.body.userType ==''
-        ){
+    ){
 
         res.json({
             success:false,
@@ -50,10 +53,11 @@ module.exports =  function(router){
 
     router.post('/authenticate', function (req, res) {
         // res.send('testing new route')
-        User.findOne({username: req.body.username}).select('email username password').exec(function (err, user) {
+        User.findOne({uname: req.body.username}).select('email username password').exec(function (err, user) {
             if(err) throw err;
 
             if(!user){
+                console.log('UserName')
                 res.json({
                     success: false,
                     message:'Could not authenticate user'
@@ -68,7 +72,10 @@ module.exports =  function(router){
                     })
                 }
                 if(!validPassword){
+                    console.log('Password')
+
                     res.json({
+
                         success: false,
                         message:'Could not authenticate password'
                     })

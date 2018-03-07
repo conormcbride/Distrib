@@ -11,7 +11,7 @@
 </head>
 <body>
 <div class = "page-header">
-    <h1>Enter the new bars details below</h1>
+    <h1>Enter the new reservation details below</h1>
     <p>{{message}}</p>
 </div>
 <div ng-controller="addReservationController" >
@@ -19,21 +19,28 @@
         <div class="col-md-6 col-md-offset-3">
 
 
-            <form ng-submit="addReservation(newBar)">
+            <form ng-submit="addReservation(newReservation)">
 
-                <div class="col-md-4" ><span style="height:55px; font-size:20px; margin-left:20px; margin-right:20px; valign="middle";>User</div>
-                <div class="col-md-8" ><input class="form-control" type="text" name="barName" placeholder="Enter the your name" ng-model="newReservation.user" required = "true"></div>
+                <div class="col-md-4" ><span style="height:55px; font-size:20px; margin-left:20px; margin-right:20px; valign="middle";>Capacity</div>
+                <div class="col-md-8" ><input class="form-control" type="number" name="capacity" placeholder="Enter the how many people will be attending" ng-model="newReservation.capacity" required = "true"></div>
+                <br><br><br>
+
+                <div class="col-md-4" ><span style="height:55px; font-size:20px; margin-left:20px; margin-right:20px; valign="middle";>Room Type</div>
+                <div class="col-md-8" ><input class="form-control" type="text" name="roomType" placeholder="Enter the how many people will be attending" ng-model="newReservation.roomType" required = "true"></div>
+                <br><br><br>
+
+                <div class="col-md-4" ><span style="height:55px; font-size:20px; margin-left:20px; margin-right:20px; valign="middle";>Event Type</div>
+                <div class="col-md-8" ><input class="form-control" type="text" name="eventType" placeholder="Enter the your event type" ng-model="newReservation.eventType" required = "true"></div>
                 <br><br><br>
 
                 <div class="col-md-4" ><span style="height:55px; font-size:20px; margin-left:20px; margin-right:20px; valign="middle";>Date</div>
-                <div class="col-md-8" ><input class="form-control"  type="text" name="location"  placeholder="Enter the you want to reserve" ng-model="newReservation.location"  required = "true"> </div>
+                <div class="col-md-8" ><input class="form-control"  type="date" name="date"  placeholder="Enter the date you want to reserve" ng-model="newReservation.date"  required = "true"> </div>
                 <br><br><br>
 
                 <div class="col-md-4" ><span style="height:55px; font-size:20px; margin-left:20px; margin-right:20px; valign="middle";>Length</div>
-                <div class="col-md-8" ><input class="form-control"  type="number" name="earnings"  placeholder="Enter the bars earnings" ng-model="newReservation.earnings"  required = "true"></input></div>
-                <br><br><br>
-                <br><br><br>
-                er
+                <div class="col-md-8" ><input class="form-control"  type="number" name="length"  placeholder="Enter the length of the reservation" ng-model="newReservation.length"  required = "true"></input></div>
+                <br><br>
+
 
                 <br><br><br>
                 <div class="col-md-9" ></div><div class="col-md-3" ><button class ="btn btn-primary"  type = "submit">ENTER NEW RESERVATION</button></div>

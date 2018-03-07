@@ -14,6 +14,7 @@ var User = require('./app/models/user')
 
 var location = require('./app/routes/locationroutes')
 var reservation = require('./app/routes/reservationroutes')
+// var user = require('./app/routes/api.js')
 
 
 
@@ -30,45 +31,46 @@ app.use('/api', appRoutes);// defining backend routes to differentiate from fron
 app.get('/location', location.findAll);
 
 
-
 app.delete('/reservation/:id', reservation.deleteReservation);
 app.get('/reservation/:id', reservation.findOne);
 app.get('/reservation', reservation.findAll);
 app.post('/reservation', reservation.addReservation);
-
-app.post('/users', function (req, res) {
-    var user = new User();
-    user.fname = req.body.fname
-    user.password = req.body.password
-    user.email = req.body.email
-    user.lname = req.body.lname
-    user.mobileNo = req.body.mobileNo
-    user.userType = req.body.userType
-
-    if (req.body.fname == null || req.body.fname =='' ||
-        req.body.password == null || req.body.password =='' ||
-        req.body.email == null    || req.body.email =='' ||
-        req.body.lname == null    || req.body.lname =='' ||
-        req.body.mobileNo == null || req.body.mobileNo =='' ||
-        req.body.userType == null     || req.body.userType ==''
-    ){
-
-        res.json({
-            success:false,
-            message:'Ensure nothing is left empty'
-        })
-    }else user.save(function (err) {
-        if( err){
-            res.json({
-                success:false,
-                message:'Username or Email already exists'
-            })
-        }else{
-            res.json({
-                success:true,
-                message:'User Created!'})
-        }
-    })})
+app.put('/reservation/:id/update', reservation.updateCapacity);
+// app.post('/users', function (req, res) {
+//     var user = new User();
+//     user.uname = req.body.uname
+//     user.fname = req.body.fname
+//     user.password = req.body.password
+//     user.email = req.body.email
+//     user.lname = req.body.lname
+//     user.mobileNo = req.body.mobileNo
+//     user.userType = req.body.userType
+//
+//     if (req.body.fname == null || req.body.fname ==''
+//         ||req.body.uname == null || req.body.uname =='' ||
+//         req.body.password == null || req.body.password =='' ||
+//         req.body.email == null    || req.body.email =='' ||
+//         req.body.lname == null    || req.body.lname =='' ||
+//         req.body.mobileNo == null || req.body.mobileNo =='' ||
+//         req.body.userType == null     || req.body.userType ==''
+//     ){
+//
+//         res.json({
+//             success:false,
+//             message:'Ensure nothing is left empty'
+//         })
+//     }else user.save(function (err) {
+//         if( err){
+//             res.json({
+//                 success:false,
+//                 message:'Username or Email already exists'
+//             })
+//         }else{
+//             res.json({
+//                 success:true,
+//                 message:'User Created!'})
+//         }
+//     })})
 
 
 mongoose.connect('mongodb://localhost:27017/reservationdb', function(err){

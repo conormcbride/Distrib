@@ -26,10 +26,13 @@ router.addReservation = function(req, res) {
 
     var reservation = new Reservation();
 
-    reservation.user = req.body.user;
-    reservation.location = req.body.location;
-    reservation.date = req.body.date;
+    reservation.roomType = req.body.roomType;
+    reservation.eventType = req.body.eventType;
+    var date = new Date(req.body.date);
+    var tempDate = date.toLocaleDateString()
+    reservation.date = tempDate
     reservation.length = req.body.length;
+    reservation.capacity = req.body.capacity;
 
     console.log('Adding Reservation: ' + JSON.stringify(Reservation));
 
@@ -51,6 +54,23 @@ router.deleteReservation = function(req, res) {
     });
 }
 
+
+router.updateCapacity = function(req, res) {
+
+    Reservation.findById(req.params.id, function(err,reservation) {
+        if (err)
+            res.send(err);
+        else {
+            reservation.capacity =+ req.body.capacity;
+            reservation.save(function (err) {
+                if (err)
+                    res.send(err);
+                else
+                    res.json({ message: 'Reservation capacity have been updated!', data: reservation });
+            });
+        }
+    })
+}
 
 
 module.exports = router;

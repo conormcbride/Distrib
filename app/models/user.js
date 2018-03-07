@@ -5,6 +5,7 @@ var bcrypt = require('bcrypt-nodejs');
 // User Mongoose Schema
 var UserSchema = new Schema({
 
+    uname: { type: String, lowercase: true, required: true },
     fname: { type: String, lowercase: true, required: true },
     lname: { type: String, lowercase: true, required: true},
     mobileNo:{ type: Number, lowercase: true, required: true},
